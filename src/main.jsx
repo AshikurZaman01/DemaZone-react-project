@@ -9,6 +9,8 @@ import Roots from './Components/Roots/Roots';
 import Home from './Components/Pages/Home/Home';
 import Products from './Components/Pages/Products/Products';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
+import ProductDetails from './Components/Pages/Products/ProductDetails';
+import axios from 'axios';
 
 const router = createBrowserRouter([
   {
@@ -24,9 +26,15 @@ const router = createBrowserRouter([
         element: <Products></Products>
       },
       {
+        path: "/product/:id",
+        element: <ProductDetails></ProductDetails>,
+        loader: ({ params }) => axios.get(`https://dummyjson.com/products/${params.id}`)
+      },
+      {
         path: "/dashboard",
         element: <Dashboard></Dashboard>
-      }
+      },
+
 
     ]
   },
