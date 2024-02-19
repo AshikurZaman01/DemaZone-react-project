@@ -5,7 +5,9 @@ const Roots = () => {
     return (
         <div className="container mx-auto">
             <Header></Header>
-            <Outlet></Outlet>
+            <div className='min-h-screen'>
+                <Outlet></Outlet>
+            </div>
         </div>
     );
 };

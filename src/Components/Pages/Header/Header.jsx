@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
     return (
         <div>
-            <section className="flex justify-between items-center shadow-md shadow-gray-400 rounded-full p-6">
+            <section className="flex justify-between items-center shadow-md shadow-gray-400 rounded-full p-6 mt-5">
 
                 <div>
                     <Link to={'/'}><h1 className="text-3xl font-bold">DemaZone</h1></Link>
