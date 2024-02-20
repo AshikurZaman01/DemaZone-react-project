@@ -11,6 +11,9 @@ import Products from './Components/Pages/Products/Products';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import ProductDetails from './Components/Pages/Products/ProductDetails';
 import axios from 'axios';
+import DashHome from './Components/Pages/Dashboard/Layouts/DashHome';
+import Profile from './Components/Pages/Dashboard/Profile';
+import EditProfile from './Components/Pages/Dashboard/EditProfile';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +35,22 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <Dashboard></Dashboard>
+        element: <Dashboard></Dashboard>,
+        children: [
+          {
+            path: "/dashboard",
+            element: <DashHome></DashHome>
+          },
+          {
+            path: "/dashboard/profile",
+            element: <Profile></Profile>
+          },
+          {
+            path: "/dashboard/editProfile",
+            element: <EditProfile></EditProfile>
+          },
+        ]
+
       },
 
 
